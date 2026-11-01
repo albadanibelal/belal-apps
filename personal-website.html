@@ -383,6 +383,12 @@
       box-shadow: 0 0 0 3px rgba(255,159,10,.18);
       flex: 0 0 auto;
     }
+    .app-status.live::before {
+      background: #30d158;
+      box-shadow: 0 0 0 3px rgba(48,209,88,.22);
+    }
+    .policy-arabic p + p { margin-top: 14px; }
+    .policy-arabic ul { margin-top: 14px; }
     .app-copy { margin-top: auto; }
     .app-card h3 {
       max-width: 440px;
@@ -675,7 +681,7 @@
         <div class="section-index">02 / Apps</div>
         <div>
           <h2 id="apps-title">Built for Meta Quest.</h2>
-          <p class="section-lede">Three immersive apps submitted to Meta Horizon — each currently in review ahead of release.</p>
+          <p class="section-lede">Three immersive apps for Meta Quest. Mushaf VR is live on the Meta Horizon Store; Qibla and Baloot VR are working through review. Every app’s privacy policy is published right here — use the Privacy Policy button on each card.</p>
         </div>
       </div>
       <div class="apps-stage">
@@ -684,17 +690,14 @@
             <div class="app-icon" aria-hidden="true">
               <svg width="30" height="30" viewBox="0 0 24 24" fill="none"><path d="M5 4.5C6.8 3.6 9 3.2 12 3.2v15.6c-3 0-5.2.4-7 1.3V4.5Z" fill="rgba(255,255,255,.18)" stroke="#fff" stroke-width="1.4" stroke-linejoin="round"/><path d="M19 4.5c-1.8-.9-4-1.3-7-1.3v15.6c3 0 5.2.4 7 1.3V4.5Z" fill="rgba(255,255,255,.08)" stroke="#fff" stroke-width="1.4" stroke-linejoin="round"/><path d="M8 7.2c.9-.2 1.9-.3 3-.3M8 10c.9-.2 1.9-.3 3-.3M13 6.9c1.1 0 2.1.1 3 .3M13 9.7c1.1 0 2.1.1 3 .3" stroke="#fff" stroke-width="1.2" stroke-linecap="round" opacity=".9"/></svg>
             </div>
-            <span class="app-status">In review on Meta Horizon</span>
+            <span class="app-status live">Live on Meta Horizon Store</span>
           </div>
           <div class="app-label">Meta Quest · Quran Reader</div>
           <div class="app-copy">
             <h3>Mushaf VR</h3>
             <p>A Quran reader for Meta Quest presenting the Madinah Mushaf in a calm, immersive page-by-page experience.</p>
             <div class="app-actions" aria-label="Mushaf VR links">
-              <a class="app-action primary" href="https://developers.meta.com/horizon/manage/applications/1300385273161823/" target="_blank" rel="noopener noreferrer">
-                View on Meta Horizon
-                <svg width="14" height="14" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 17L17 7M9 7h8v8" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
-              </a>
+              <a class="app-action primary" href="?page=privacy-mushaf">Privacy Policy</a>
             </div>
           </div>
         </article>
@@ -704,18 +707,14 @@
             <div class="app-icon" aria-hidden="true">
               <svg width="30" height="30" viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="8.2" stroke="#fff" stroke-width="1.4"/><path d="M15.5 8.5l-1.9 4.9-4.9 1.9 1.9-4.9 4.9-1.9Z" fill="#fff"/><circle cx="12" cy="12" r="1.1" fill="#0a84ff"/></svg>
             </div>
-            <span class="app-status">In review on Meta Horizon</span>
+            <span class="app-status">Submitted to Meta Horizon</span>
           </div>
           <div class="app-label">Meta Quest · Direction Finder</div>
           <div class="app-copy">
             <h3>Qibla — <span lang="ar" dir="rtl">القبلة</span></h3>
             <p>A Qibla direction finder for Meta Quest that helps you locate the direction of Makkah from inside your headset.</p>
             <div class="app-actions" aria-label="Qibla app links">
-              <a class="app-action primary" href="https://developers.meta.com/horizon/manage/applications/1296169093583441/" target="_blank" rel="noopener noreferrer">
-                View on Meta Horizon
-                <svg width="14" height="14" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 17L17 7M9 7h8v8" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
-              </a>
-              <a class="app-action" href="https://muse.ai/s/qibla-vr-privacy-policy-ct6cxi6xhqxmuxk" target="_blank" rel="noopener noreferrer">Privacy Policy</a>
+              <a class="app-action primary" href="?page=privacy-qibla">Privacy Policy</a>
             </div>
           </div>
         </article>
@@ -725,17 +724,14 @@
             <div class="app-icon" aria-hidden="true">
               <svg width="30" height="30" viewBox="0 0 24 24" fill="none"><rect x="4" y="6" width="11" height="14" rx="2" transform="rotate(-8 4 6)" fill="rgba(255,255,255,.14)" stroke="#fff" stroke-width="1.3"/><rect x="9" y="4.5" width="11" height="14" rx="2" transform="rotate(7 9 4.5)" fill="rgba(255,255,255,.08)" stroke="#fff" stroke-width="1.3"/><path d="M14.5 9.2c.9-1.2 3-.9 3 .7 0 1.4-1.6 2.3-3 3.4-1.4-1.1-3-2-3-3.4 0-1.6 2.1-1.9 3-.7Z" fill="#fff"/></svg>
             </div>
-            <span class="app-status">In review on Meta Horizon</span>
+            <span class="app-status">Submitted to Meta Horizon</span>
           </div>
           <div class="app-label">Meta Quest · Card Game</div>
           <div class="app-copy">
             <h3>Baloot VR</h3>
             <p>The Saudi Baloot card game in VR for Meta Quest — sit at the table and play against three AI opponents.</p>
             <div class="app-actions" aria-label="Baloot VR app links">
-              <a class="app-action primary" href="https://developers.meta.com/horizon/manage/applications/1300445239822493/" target="_blank" rel="noopener noreferrer">
-                View on Meta Horizon
-                <svg width="14" height="14" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 17L17 7M9 7h8v8" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
-              </a>
+              <a class="app-action primary" href="?page=privacy-baloot">Privacy Policy</a>
             </div>
           </div>
         </article>
@@ -755,15 +751,17 @@
     <footer>
       <p>Belal Al-Badani</p>
       <div class="footer-links">
-        <a href="https://muse.ai/s/qibla-vr-privacy-policy-ct6cxi6xhqxmuxk" target="_blank" rel="noopener noreferrer">Qibla VR Privacy Policy</a>
+        <a href="?page=privacy-mushaf">Mushaf VR Privacy Policy</a>
+        <a href="?page=privacy-qibla">Qibla VR Privacy Policy</a>
+        <a href="?page=privacy-baloot">Baloot VR Privacy Policy</a>
         <p>Trust &amp; Safety · Integrity · Product Building</p>
       </div>
     </footer>
   </main>
 
-  <main class="page privacy-page" id="privacy-view" hidden>
+  <main class="page privacy-page" id="privacy-view-qibla" hidden>
     <nav class="privacy-topbar" aria-label="Privacy policy navigation">
-      <a class="privacy-back" href="./">
+      <a class="privacy-back" href="./" data-home-link>
         <svg width="18" height="18" viewBox="0 0 24 24" aria-hidden="true"><path d="m14 6-6 6 6 6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
         Back to Belal’s website
       </a>
@@ -778,8 +776,8 @@
       </header>
 
       <div class="policy-body">
-        <section class="policy-section" aria-labelledby="location-title">
-          <h2 id="location-title">Location data</h2>
+        <section class="policy-section" aria-labelledby="qibla-location-title">
+          <h2 id="qibla-location-title">Location data</h2>
           <ul>
             <li>The app uses your selected location <strong>only</strong> to calculate the Qibla bearing—the direction from your position to Makkah—and the distance to Makkah.</li>
             <li>Your location is stored <strong>only on your device</strong> in the app’s on-device storage so the app remembers your city between sessions.</li>
@@ -787,8 +785,8 @@
           </ul>
         </section>
 
-        <section class="policy-section" aria-labelledby="other-data-title">
-          <h2 id="other-data-title">Other data</h2>
+        <section class="policy-section" aria-labelledby="qibla-other-data-title">
+          <h2 id="qibla-other-data-title">Other data</h2>
           <ul>
             <li>The app does not collect, store, or share personal information, usage analytics, advertising identifiers, contacts, or files.</li>
             <li>The app does not access the camera or microphone.</li>
@@ -796,18 +794,18 @@
           </ul>
         </section>
 
-        <section class="policy-section" aria-labelledby="children-title">
-          <h2 id="children-title">Children’s privacy</h2>
+        <section class="policy-section" aria-labelledby="qibla-children-title">
+          <h2 id="qibla-children-title">Children’s privacy</h2>
           <p>The app collects no data from anyone, including children.</p>
         </section>
 
-        <section class="policy-section" aria-labelledby="changes-title">
-          <h2 id="changes-title">Changes</h2>
+        <section class="policy-section" aria-labelledby="qibla-changes-title">
+          <h2 id="qibla-changes-title">Changes</h2>
           <p>If this policy changes, the updated version will replace this document.</p>
         </section>
 
-        <section class="policy-section" aria-labelledby="contact-policy-title">
-          <h2 id="contact-policy-title">Contact</h2>
+        <section class="policy-section" aria-labelledby="qibla-contact-title">
+          <h2 id="qibla-contact-title">Contact</h2>
           <p>For privacy questions, contact the developer through the Meta Horizon Store listing contact channel.</p>
         </section>
       </div>
@@ -818,15 +816,221 @@
     </footer>
   </main>
 
+  <main class="page privacy-page" id="privacy-view-mushaf" hidden>
+    <nav class="privacy-topbar" aria-label="Privacy policy navigation">
+      <a class="privacy-back" href="./" data-home-link>
+        <svg width="18" height="18" viewBox="0 0 24 24" aria-hidden="true"><path d="m14 6-6 6 6 6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        Back to Belal’s website
+      </a>
+      <span class="privacy-updated">Effective September 27, 2026</span>
+    </nav>
+
+    <article class="policy-sheet">
+      <header class="policy-header">
+        <p class="policy-eyebrow">Mushaf VR</p>
+        <h1>Privacy Policy</h1>
+        <p class="policy-summary">Mushaf VR is a Quran reading app for Meta Quest. It displays the complete Holy Quran (Mushaf Al-Madina, 604 pages) in Arabic in a bright virtual majlis lounge, and lets you turn pages with hand gestures or controllers, search verses, and save bookmarks.</p>
+      </header>
+
+      <div class="policy-body">
+        <section class="policy-section" aria-labelledby="mushaf-data-title">
+          <h2 id="mushaf-data-title">Data we collect</h2>
+          <div>
+            <p><strong>None.</strong> The app collects, transmits, and shares no personal data of any kind:</p>
+            <ul>
+              <li>No accounts, no sign-in — no names, emails, or contact information.</li>
+              <li>No location data.</li>
+              <li>No microphone or camera recording.</li>
+              <li>No analytics, crash reporting, or advertising SDKs.</li>
+              <li>The complete Quran text ships inside the app and works fully offline.</li>
+            </ul>
+          </div>
+        </section>
+
+        <section class="policy-section" aria-labelledby="mushaf-input-title">
+          <h2 id="mushaf-input-title">Input processing</h2>
+          <p>Controller and hand-tracking input is used only to navigate the app (turning pages, pressing buttons) and is processed entirely on your headset. It is never recorded, transmitted, or shared.</p>
+        </section>
+
+        <section class="policy-section" aria-labelledby="mushaf-storage-title">
+          <h2 id="mushaf-storage-title">Data stored on your device</h2>
+          <p>Your bookmarks, last reading position, and display settings are saved in the app’s local storage on your headset only. They never leave your device. Deleting the app deletes them.</p>
+        </section>
+
+        <section class="policy-section" aria-labelledby="mushaf-children-title">
+          <h2 id="mushaf-children-title">Children’s privacy</h2>
+          <p>The app is suitable for all ages and collects no data from anyone, including children.</p>
+        </section>
+
+        <section class="policy-section" aria-labelledby="mushaf-changes-title">
+          <h2 id="mushaf-changes-title">Changes to this policy</h2>
+          <p>If this policy changes, the updated version will be posted at this URL with a new effective date.</p>
+        </section>
+
+        <section class="policy-section" aria-labelledby="mushaf-contact-title">
+          <h2 id="mushaf-contact-title">Contact</h2>
+          <p>For privacy questions about Mushaf VR: <a href="mailto:albadanibelal@gmail.com">albadanibelal@gmail.com</a></p>
+        </section>
+
+        <section class="policy-section" aria-labelledby="mushaf-arabic-title">
+          <h2 id="mushaf-arabic-title" lang="ar" dir="rtl">العربية</h2>
+          <div class="policy-arabic" lang="ar" dir="rtl">
+            <p>مصحف المدينة للواقع الافتراضي هو تطبيق لقراءة القرآن الكريم على نظارة Meta Quest. يعرض القرآن الكريم كاملاً (مصحف المدينة، 604 صفحة) باللغة العربية في بيئة افتراضية، ويتيح تقليب الصفحات بإيماءات اليد أو يد التحكم، والبحث في الآيات، وحفظ العلامات.</p>
+            <p><strong>البيانات التي نجمعها: لا نجمع أي بيانات.</strong> التطبيق لا يجمع أي بيانات شخصية ولا ينقلها ولا يشاركها بأي شكل:</p>
+            <ul>
+              <li>لا حسابات ولا تسجيل دخول — لا أسماء ولا بريد إلكتروني ولا معلومات اتصال.</li>
+              <li>لا بيانات موقع.</li>
+              <li>لا تسجيل من الميكروفون أو الكاميرا.</li>
+              <li>لا تحليلات ولا تقارير أعطال ولا حزم إعلانية.</li>
+              <li>نص القرآن الكريم كاملاً مضمّن داخل التطبيق ويعمل دون إنترنت تماماً.</li>
+            </ul>
+            <p><strong>معالجة المدخلات.</strong> تُستخدم مدخلات يد التحكم وتتبع اليد للتنقل في التطبيق فقط (تقليب الصفحات والضغط على الأزرار)، وتُعالَج بالكامل على جهازك. لا يتم تسجيلها أو نقلها أو مشاركتها أبداً.</p>
+            <p><strong>البيانات المخزنة على جهازك.</strong> تُحفظ علاماتك وآخر موضع قراءة وإعدادات العرض في التخزين المحلي للتطبيق على نظارتك فقط. لا تغادر جهازك أبداً. حذف التطبيق يحذفها.</p>
+            <p><strong>خصوصية الأطفال.</strong> التطبيق مناسب لجميع الأعمار ولا يجمع أي بيانات من أي شخص، بمن فيهم الأطفال.</p>
+            <p><strong>تغييرات هذه السياسة.</strong> إذا تغيرت هذه السياسة، سيُنشر الإصدار المحدّث على هذا الرابط مع تاريخ سريان جديد.</p>
+            <p>لأسئلة الخصوصية حول مصحف المدينة: albadanibelal@gmail.com</p>
+          </div>
+        </section>
+      </div>
+    </article>
+
+    <footer class="privacy-footer">
+      <p>Mushaf VR · Privacy Policy</p>
+    </footer>
+  </main>
+
+  <main class="page privacy-page" id="privacy-view-baloot" hidden>
+    <nav class="privacy-topbar" aria-label="Privacy policy navigation">
+      <a class="privacy-back" href="./" data-home-link>
+        <svg width="18" height="18" viewBox="0 0 24 24" aria-hidden="true"><path d="m14 6-6 6 6 6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        Back to Belal’s website
+      </a>
+      <span class="privacy-updated">Last updated October 28, 2026</span>
+    </nav>
+
+    <article class="policy-sheet">
+      <header class="policy-header">
+        <p class="policy-eyebrow">Baloot VR</p>
+        <h1>Privacy Policy</h1>
+        <p class="policy-summary">Baloot VR (Baloot — <span lang="ar" dir="rtl">بلوت</span>) is a virtual reality card game for Meta Quest. You play the Saudi card game Baloot against on-device AI opponents at a virtual majlis table. Baloot VR is single-player: there is no multiplayer and no other real player’s data is ever accessed.</p>
+      </header>
+
+      <div class="policy-body">
+        <section class="policy-section" aria-labelledby="baloot-general-title">
+          <h2 id="baloot-general-title">Data collection — general</h2>
+          <div>
+            <p>We operate no servers, and we do not retain your personal data on any server or anywhere off your headset. Baloot VR does collect and process the Meta platform data listed in the next section — on your headset only, through Meta’s own platform services — because those platform features require it. The game:</p>
+            <ul>
+              <li>has no developer accounts or developer sign-in, and no analytics, advertising, or tracking SDKs;</li>
+              <li>does not access the camera, microphone, contacts, or your files (the in-game music panel only lists audio files you choose to place on the headset, and plays them locally);</li>
+              <li>stores only your game settings (such as language preference) locally on your headset; they are never transmitted anywhere, and they are deleted when you uninstall the game.</li>
+            </ul>
+          </div>
+        </section>
+
+        <section class="policy-section" aria-labelledby="baloot-platform-title">
+          <h2 id="baloot-platform-title">Data collected through Meta Platform features</h2>
+          <div>
+            <p>Through the Meta Horizon platform, Baloot VR collects and processes the following data about the logged-in player, and nothing else:</p>
+            <ul>
+              <li><strong>User ID (USER_ID)</strong> — your Meta account’s user ID for Baloot VR. <em>How it is used:</em> the game reads it on your headset so the Meta Avatars system can load your own avatar. <em>Retention and sharing:</em> it is processed on the device during play only; it is not stored by us, not transmitted to us, not shared with or sold to any third party, and not used for analytics or advertising.</li>
+              <li><strong>User Profile (USER_PROFILE)</strong> — the profile information Meta returns with the logged-in user (such as your Meta display name / username and profile picture). <em>How it is used:</em> Baloot VR calls Meta’s logged-in-user function for one purpose only — to obtain your User ID, which the Avatars system requires. The profile fields returned with that call are not displayed in the game, are not used for any other purpose, and are never stored, transmitted to us, shared, sold, or used for analytics or advertising. No other person’s profile is accessed.</li>
+              <li><strong>Avatars</strong> — your Meta Avatar’s appearance/model, loaded through Meta’s platform services. <em>How it is used:</em> only to render you as yourself at your own seat during play, with head and hand tracking driving the avatar’s pose. It is not recorded, stored by us, or transmitted to us. If an avatar cannot load, the game shows a preset avatar instead, so play is never blocked. The other seats always use preset avatars driven by on-device AI opponents.</li>
+              <li><strong>User Age Group</strong> — the age-group category Meta provides for your account. <em>How it is used:</em> only to confirm the game is running in the mixed-ages mode certified for this app. We do not receive or store your birthdate or exact age.</li>
+            </ul>
+            <p>Because avatar loading uses Meta platform services, this feature needs the headset to be online and signed in to your Meta account.</p>
+          </div>
+        </section>
+
+        <section class="policy-section" aria-labelledby="baloot-deletion-title">
+          <h2 id="baloot-deletion-title">Requesting deletion of your data</h2>
+          <div>
+            <p><strong>This right is available to every user, free of charge, regardless of where you live — it does not depend on your country or state of residence.</strong></p>
+            <p>Because Al-Badani operates no servers and does not store your User ID, profile information, avatar, or gameplay data, there is normally no developer-held copy of your personal data to delete. The only data stored anywhere is your game settings, stored locally on your own headset; you can delete it at any time by uninstalling Baloot VR or clearing the app’s data on the headset.</p>
+            <p>If you would like us to confirm that we hold no data about you, or to request deletion of any data you believe we hold, contact us and we will act on it:</p>
+            <ul>
+              <li>Email: <strong>albadanibelal@gmail.com</strong></li>
+              <li>Subject line: <strong>“Baloot VR — Data Deletion Request”</strong></li>
+              <li>Please include your Meta username so we can identify any record you are asking about.</li>
+            </ul>
+            <p>We will reply to every deletion request, confirm what (if anything) we hold, and delete any personal data identified as held by us within 30 days of receiving the request. No fee is charged and no account with us is needed, because none exists.</p>
+          </div>
+        </section>
+
+        <section class="policy-section" aria-labelledby="baloot-input-title">
+          <h2 id="baloot-input-title">Hand and controller input</h2>
+          <p>To let you pick up and play cards, the game reads controller and hand-tracking input from the headset. This input is processed only on your device in real time for gameplay. It is never recorded, stored, or transmitted anywhere.</p>
+        </section>
+
+        <section class="policy-section" aria-labelledby="baloot-gameplay-title">
+          <h2 id="baloot-gameplay-title">Gameplay data</h2>
+          <p>Your AI opponents run entirely on your device. No gameplay data (hands dealt, bids, scores) is recorded or sent anywhere.</p>
+        </section>
+
+        <section class="policy-section" aria-labelledby="baloot-children-title">
+          <h2 id="baloot-children-title">Children’s privacy</h2>
+          <p>We store no data from anyone, including children. The platform data described above is processed on the device by Meta’s platform under Meta’s own terms and privacy policy, and the User Age Group category is used only as described above.</p>
+        </section>
+
+        <section class="policy-section" aria-labelledby="baloot-changes-title">
+          <h2 id="baloot-changes-title">Changes</h2>
+          <p>If this policy changes, the updated version will replace this document and its “Last updated” date will change.</p>
+        </section>
+
+        <section class="policy-section" aria-labelledby="baloot-contact-title">
+          <h2 id="baloot-contact-title">Contact</h2>
+          <p>For privacy questions or data deletion requests: <a href="mailto:albadanibelal@gmail.com">albadanibelal@gmail.com</a> (see “Requesting deletion of your data” above).</p>
+        </section>
+
+        <section class="policy-section" aria-labelledby="baloot-arabic-title">
+          <h2 id="baloot-arabic-title" lang="ar" dir="rtl">العربية</h2>
+          <div class="policy-arabic" lang="ar" dir="rtl">
+            <p><strong>آخر تحديث:</strong> ٢٨ أكتوبر ٢٠٢٦<br /><strong>المطوّر:</strong> Al-Badani<br /><strong>للتواصل (أسئلة الخصوصية وطلبات حذف البيانات):</strong> albadanibelal@gmail.com</p>
+            <p><strong>نظرة عامة.</strong> بلوت VR (Baloot — بلوت) لعبة ورق بالواقع الافتراضي لأجهزة Meta Quest. تلعب لعبة البلوت السعودية ضد منافسين من الذكاء الاصطناعي على طاولة مجلس افتراضية. اللعبة فردية تماماً: لا يوجد لعب جماعي، ولا يتم الوصول إلى بيانات أي لاعب حقيقي آخر أبداً.</p>
+            <p><strong>جمع البيانات — عام.</strong> لا نشغّل أي خوادم، ولا نحتفظ ببياناتك الشخصية على أي خادم أو في أي مكان خارج نظارتك. تقوم بلوت VR بجمع ومعالجة بيانات منصة Meta المذكورة في هذا القسم — على نظارتك فقط، عبر خدمات منصة Meta نفسها — لأن ميزات المنصة هذه تتطلب ذلك. اللعبة: لا تحتوي على حسابات مطوّر ولا تسجيل دخول لدى المطوّر، ولا أدوات تحليل أو إعلانات أو تتبّع؛ ولا تصل إلى الكاميرا أو الميكروفون أو جهات الاتصال أو ملفاتك (لوحة الموسيقى داخل اللعبة تعرض فقط الملفات الصوتية التي تضعها بنفسك على النظارة، وتشغّلها محلياً)؛ وتحفظ إعدادات لعبتك فقط (مثل اللغة المفضّلة) محلياً على نظارتك، ولا تُرسَل إلى أي مكان أبداً، وتُحذف عند إلغاء تثبيت اللعبة.</p>
+            <p><strong>البيانات التي تُجمع وتُعالج عبر ميزات منصة Meta.</strong> عبر منصة Meta Horizon، تجمع بلوت VR وتعالج البيانات التالية الخاصة باللاعب المسجّل دخوله، ولا شيء غيرها:</p>
+            <ul>
+              <li><strong>معرّف المستخدم (USER_ID)</strong> — معرّف حساب Meta الخاص بك للعبة بلوت VR. <em>كيفية استخدامه:</em> تقرأه اللعبة على نظارتك حتى يتمكن نظام Meta Avatars من تحميل صورتك الرمزية الخاصة بك. <em>الاحتفاظ والمشاركة:</em> يُعالج على الجهاز أثناء اللعب فقط؛ لا نخزّنه، ولا يُرسَل إلينا، ولا يُشارك مع أي طرف ثالث أو يُباع له، ولا يُستخدم للتحليل أو الإعلانات.</li>
+              <li><strong>الملف الشخصي للمستخدم (USER_PROFILE)</strong> — معلومات الملف الشخصي التي تعيدها Meta مع المستخدم المسجّل دخوله (مثل اسم العرض / اسم المستخدم في Meta وصورة الملف الشخصي). <em>كيفية استخدامه:</em> تستدعي بلوت VR دالة المستخدم المسجّل دخوله لدى Meta لغرض واحد فقط — الحصول على معرّف المستخدم الخاص بك، وهو ما يتطلبه نظام الصور الرمزية. حقول الملف الشخصي المُعادة مع هذا الاستدعاء لا تُعرض داخل اللعبة، ولا تُستخدم لأي غرض آخر، ولا تُخزّن أبداً ولا تُرسَل إلينا ولا تُشارك ولا تُباع ولا تُستخدم للتحليل أو الإعلانات. ولا يتم الوصول إلى ملف أي شخص آخر.</li>
+              <li><strong>الصور الرمزية (Avatars)</strong> — مظهر / نموذج صورتك الرمزية في Meta، يُحمّل عبر خدمات منصة Meta. <em>كيفية استخدامه:</em> فقط لعرضك بصورتك الحقيقية في مقعدك أثناء اللعب، مع تحريك وضعية الصورة الرمزية بتتبّع الرأس واليد. لا يُسجّل ولا يُخزّن لدينا ولا يُرسَل إلينا. وإذا تعذّر تحميل الصورة، تعرض اللعبة صورة جاهزة بدلاً منها حتى لا يتوقف اللعب أبداً. المقاعد الأخرى تستخدم دائماً صوراً جاهزة يقودها منافسو ذكاء اصطناعي على الجهاز.</li>
+              <li><strong>الفئة العمرية للمستخدم (User Age Group)</strong> — فئة الفئة العمرية التي توفرها Meta لحسابك. <em>كيفية استخدامها:</em> فقط للتأكد من أن اللعبة تعمل في وضع الأعمار المختلطة المعتمد لهذا التطبيق. لا نتلقى تاريخ ميلادك أو عمرك الدقيق ولا نخزّنهما.</li>
+            </ul>
+            <p>لأن تحميل الصورة الرمزية يستخدم خدمات منصة Meta، تحتاج هذه الميزة إلى اتصال النظارة بالإنترنت وتسجيل الدخول إلى حساب Meta الخاص بك.</p>
+            <p><strong>طلب حذف بياناتك.</strong> هذا الحق متاح لكل مستخدم، مجاناً، بغض النظر عن مكان إقامته — ولا يعتمد على بلدك أو ولايتك. لأن Al-Badani لا يشغّل أي خوادم ولا يخزّن معرّف المستخدم أو معلومات ملفك الشخصي أو صورتك الرمزية أو بيانات لعبك، فلا توجد عادة أي نسخة من بياناتك الشخصية لدى المطوّر لحذفها. البيانات الوحيدة المحفوظة في أي مكان هي إعدادات لعبتك، محفوظة محلياً على نظارتك أنت؛ ويمكنك حذفها في أي وقت بإلغاء تثبيت بلوت VR أو بمسح بيانات التطبيق على النظارة. إذا أردت أن نؤكد لك أننا لا نحتفظ بأي بيانات عنك، أو أن تطلب حذف أي بيانات تعتقد أننا نحتفظ بها، تواصل معنا على albadanibelal@gmail.com بعنوان «Baloot VR — Data Deletion Request» مع ذكر اسم المستخدم الخاص بك في Meta. سنرد على كل طلب حذف، ونؤكد ما نحتفظ به (إن وجد)، ونحذف أي بيانات شخصية يتبين أننا نحتفظ بها خلال ٣٠ يوماً من استلام الطلب. لا تُفرض أي رسوم، ولا يلزم وجود حساب لدينا، لأنه لا يوجد أي حساب أصلاً.</p>
+            <p><strong>إدخال اليد ووحدات التحكم.</strong> لتمكينك من التقاط الأوراق ولعبها، تقرأ اللعبة إدخال وحدات التحكم وتتبّع اليد من النظارة. تتم معالجة هذا الإدخال على جهازك فقط وفي الوقت الفعلي لأغراض اللعب. لا يتم تسجيله أو تخزينه أو إرساله إلى أي مكان.</p>
+            <p><strong>بيانات اللعب.</strong> منافسوك من الذكاء الاصطناعي يعملون بالكامل على جهازك. لا يتم تسجيل أي بيانات لعب (الأوراق الموزعة، المزايدات، النتائج) أو إرسالها إلى أي مكان.</p>
+            <p><strong>خصوصية الأطفال.</strong> لا نخزّن أي بيانات من أي شخص، بمن فيهم الأطفال. بيانات المنصة الموضحة أعلاه تُعالج على الجهاز بواسطة منصة Meta وفق شروط Meta وسياسة الخصوصية الخاصة بها، وفئة الفئة العمرية تُستخدم فقط كما هو موضح أعلاه.</p>
+            <p><strong>التغييرات.</strong> إذا تغيّرت هذه السياسة، ستحل النسخة المحدّثة محل هذه الوثيقة وسيتغيّر تاريخ «آخر تحديث» فيها.</p>
+            <p><strong>التواصل.</strong> لأسئلة الخصوصية أو طلبات حذف البيانات: albadanibelal@gmail.com (انظر قسم «طلب حذف بياناتك» أعلاه).</p>
+          </div>
+        </section>
+      </div>
+    </article>
+
+    <footer class="privacy-footer">
+      <p>Baloot VR · Privacy Policy</p>
+    </footer>
+  </main>
+
   <script>
     (function () {
-      var privacyView = document.getElementById('privacy-view');
       var homeView = document.getElementById('home-view');
+      var views = {
+        'privacy-mushaf': { el: document.getElementById('privacy-view-mushaf'), title: 'Mushaf VR Privacy Policy — Belal Al-Badani' },
+        'privacy-qibla': { el: document.getElementById('privacy-view-qibla'), title: 'Qibla VR Privacy Policy — Belal Al-Badani' },
+        'privacy-baloot': { el: document.getElementById('privacy-view-baloot'), title: 'Baloot VR Privacy Policy — Belal Al-Badani' }
+      };
+      var homeLinks = document.querySelectorAll('[data-home-link]');
+      for (var i = 0; i < homeLinks.length; i++) {
+        homeLinks[i].setAttribute('href', window.location.pathname);
+      }
       var params = new URLSearchParams(window.location.search);
-      if (params.get('page') === 'privacy-qibla') {
+      var view = views[params.get('page')];
+      if (view && view.el) {
         homeView.hidden = true;
-        privacyView.hidden = false;
-        document.title = 'Qibla VR Privacy Policy — Belal Al-Badani';
+        view.el.hidden = false;
+        document.title = view.title;
+        window.scrollTo(0, 0);
       }
     }());
   </script>
