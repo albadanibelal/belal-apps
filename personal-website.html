@@ -1,0 +1,834 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <meta name="color-scheme" content="light dark" />
+  <meta name="theme-color" content="#f2f2f7" media="(prefers-color-scheme: light)" />
+  <meta name="theme-color" content="#000000" media="(prefers-color-scheme: dark)" />
+  <meta name="description" content="Belal Al-Badani — Trust & Safety, integrity, and independent app development." />
+  <link rel="icon" href="data:," />
+  <title>Belal Al-Badani</title>
+  <style>
+    :root {
+      color-scheme: light dark;
+      --canvas: #f2f2f7;
+      --surface: rgba(255, 255, 255, .72);
+      --surface-solid: #ffffff;
+      --raised: rgba(255, 255, 255, .88);
+      --ink: #111114;
+      --muted: #65656c;
+      --tertiary: #8e8e93;
+      --line: rgba(60, 60, 67, .14);
+      --line-strong: rgba(60, 60, 67, .24);
+      --blue: #007aff;
+      --blue-deep: #0062d5;
+      --blue-soft: #e8f2ff;
+      --green: #30b46e;
+      --orange: #ff9f0a;
+      --shadow-sm: 0 2px 12px rgba(24, 24, 28, .07);
+      --shadow-lg: 0 28px 80px rgba(24, 24, 28, .14), 0 2px 12px rgba(24, 24, 28, .06);
+      --glass-edge: rgba(255, 255, 255, .78);
+    }
+
+    @media (prefers-color-scheme: dark) {
+      :root {
+        --canvas: #000000;
+        --surface: rgba(28, 28, 30, .72);
+        --surface-solid: #1c1c1e;
+        --raised: rgba(44, 44, 46, .84);
+        --ink: #f5f5f7;
+        --muted: #aeaeb2;
+        --tertiary: #8e8e93;
+        --line: rgba(255, 255, 255, .11);
+        --line-strong: rgba(255, 255, 255, .2);
+        --blue: #0a84ff;
+        --blue-deep: #0071e3;
+        --blue-soft: rgba(10, 132, 255, .16);
+        --green: #30d158;
+        --orange: #ff9f0a;
+        --shadow-sm: 0 2px 14px rgba(0, 0, 0, .28);
+        --shadow-lg: 0 30px 90px rgba(0, 0, 0, .55), 0 2px 14px rgba(0, 0, 0, .25);
+        --glass-edge: rgba(255, 255, 255, .14);
+      }
+    }
+
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      min-width: 0;
+      overflow-x: hidden;
+      background:
+        radial-gradient(circle at 82% 4%, rgba(0, 122, 255, .10), transparent 30rem),
+        var(--canvas);
+      color: var(--ink);
+      font-family: -apple-system, BlinkMacSystemFont, "SF Pro Display", "SF Pro Text", "Helvetica Neue", sans-serif;
+      line-height: 1.45;
+      -webkit-font-smoothing: antialiased;
+      text-rendering: optimizeLegibility;
+    }
+    a { color: inherit; }
+    svg { display: block; }
+    [hidden] { display: none !important; }
+    .page {
+      width: min(1180px, calc(100% - 48px));
+      margin-inline: auto;
+    }
+
+    .hero {
+      min-height: min(760px, 88vh);
+      display: grid;
+      grid-template-columns: minmax(0, 1.08fr) minmax(320px, .92fr);
+      gap: clamp(42px, 7vw, 88px);
+      align-items: center;
+      padding: 70px 0 86px;
+    }
+    .status {
+      display: inline-flex;
+      align-items: center;
+      gap: 9px;
+      margin-bottom: 24px;
+      padding: 7px 12px 7px 10px;
+      border: 1px solid var(--line);
+      border-radius: 999px;
+      background: var(--surface);
+      color: var(--muted);
+      box-shadow: inset 0 1px 0 var(--glass-edge), var(--shadow-sm);
+      font-size: .82rem;
+      font-weight: 650;
+      letter-spacing: -.01em;
+      -webkit-backdrop-filter: blur(24px) saturate(160%);
+      backdrop-filter: blur(24px) saturate(160%);
+    }
+    .status-dot {
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: var(--green);
+      box-shadow: 0 0 0 4px rgba(48, 209, 88, .13);
+    }
+    h1, h2, h3, p { margin-top: 0; }
+    h1 {
+      max-width: 760px;
+      margin-bottom: 24px;
+      font-size: clamp(3.7rem, 8.1vw, 7.5rem);
+      font-weight: 720;
+      line-height: .89;
+      letter-spacing: -.072em;
+    }
+    .intro {
+      max-width: 630px;
+      margin-bottom: 34px;
+      color: var(--muted);
+      font-size: clamp(1.12rem, 2vw, 1.42rem);
+      line-height: 1.5;
+      letter-spacing: -.022em;
+    }
+    .hero-actions { display: flex; flex-wrap: wrap; gap: 12px; }
+    .button {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      min-height: 50px;
+      padding: 12px 21px;
+      border: 1px solid transparent;
+      border-radius: 999px;
+      background: var(--blue);
+      color: #fff;
+      box-shadow: 0 8px 24px rgba(0, 122, 255, .22), inset 0 1px 0 rgba(255, 255, 255, .22);
+      text-decoration: none;
+      font-size: .96rem;
+      font-weight: 650;
+      letter-spacing: -.015em;
+      transition: transform .2s ease, background-color .2s ease, box-shadow .2s ease;
+    }
+    .button.secondary {
+      border-color: var(--line);
+      background: var(--surface);
+      color: var(--ink);
+      box-shadow: inset 0 1px 0 var(--glass-edge), var(--shadow-sm);
+      -webkit-backdrop-filter: blur(24px) saturate(160%);
+      backdrop-filter: blur(24px) saturate(160%);
+    }
+    .button:hover { transform: translateY(-1px); background: var(--blue-deep); }
+    .button.secondary:hover { background: var(--raised); color: var(--ink); }
+    .button:active { transform: scale(.98); }
+    .button:focus-visible { outline: 3px solid color-mix(in srgb, var(--blue) 35%, transparent); outline-offset: 3px; }
+
+    .signal-panel {
+      position: relative;
+      min-height: 470px;
+      overflow: hidden;
+      border: 1px solid var(--glass-edge);
+      border-radius: 48px;
+      background:
+        radial-gradient(circle at 67% 29%, rgba(255, 255, 255, .4), transparent 24%),
+        linear-gradient(145deg, #4db6ff 0%, #0a84ff 42%, #1254c0 100%);
+      color: #fff;
+      box-shadow: var(--shadow-lg), inset 0 1px 0 rgba(255, 255, 255, .55);
+      isolation: isolate;
+    }
+    .signal-panel::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      opacity: .2;
+      background-image: linear-gradient(to right, rgba(255,255,255,.55) 1px, transparent 1px), linear-gradient(to bottom, rgba(255,255,255,.55) 1px, transparent 1px);
+      background-size: 58px 58px;
+      -webkit-mask-image: linear-gradient(to bottom right, transparent 2%, #000 70%);
+      mask-image: linear-gradient(to bottom right, transparent 2%, #000 70%);
+    }
+    .signal-panel::after {
+      content: "";
+      position: absolute;
+      width: 210px;
+      height: 210px;
+      right: -40px;
+      bottom: -52px;
+      border-radius: 50%;
+      background: rgba(255,255,255,.12);
+      filter: blur(1px);
+    }
+    .orbit {
+      position: absolute;
+      border: 1px solid rgba(255,255,255,.34);
+      border-radius: 50%;
+      box-shadow: inset 0 0 26px rgba(255,255,255,.04);
+    }
+    .orbit.one { width: 330px; height: 330px; right: -48px; top: 36px; }
+    .orbit.two { width: 218px; height: 218px; right: 8px; top: 92px; }
+    .orbit.three {
+      width: 104px;
+      height: 104px;
+      right: 65px;
+      top: 149px;
+      border: 1px solid rgba(255,255,255,.45);
+      background: rgba(255,255,255,.9);
+      box-shadow: 0 18px 46px rgba(0, 47, 120, .25), inset 0 1px 0 #fff;
+    }
+    .panel-copy {
+      position: absolute;
+      inset: auto 38px 36px;
+      z-index: 2;
+    }
+    .panel-number {
+      display: block;
+      margin-bottom: 5px;
+      font-size: 2.45rem;
+      font-weight: 680;
+      line-height: 1;
+      letter-spacing: -.055em;
+    }
+    .panel-copy p { margin: 0; color: rgba(255,255,255,.76); letter-spacing: -.015em; }
+
+    section {
+      padding: 102px 0;
+      border-top: 1px solid var(--line);
+    }
+    .section-head {
+      display: grid;
+      grid-template-columns: 180px minmax(0, 1fr);
+      gap: 34px;
+      margin-bottom: 50px;
+      align-items: start;
+    }
+    .section-index {
+      padding-top: 10px;
+      color: var(--blue);
+      font-size: .88rem;
+      font-weight: 680;
+      letter-spacing: -.01em;
+      font-variant-numeric: tabular-nums;
+    }
+    h2 {
+      max-width: 790px;
+      margin-bottom: 14px;
+      font-size: clamp(2.45rem, 5vw, 4.65rem);
+      font-weight: 700;
+      line-height: 1;
+      letter-spacing: -.06em;
+    }
+    .section-lede {
+      max-width: 690px;
+      margin: 0;
+      color: var(--muted);
+      font-size: 1.12rem;
+      line-height: 1.55;
+      letter-spacing: -.018em;
+    }
+
+    .about-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 16px;
+      margin-left: 214px;
+    }
+    .principle {
+      min-height: 240px;
+      padding: 26px;
+      border: 1px solid var(--line);
+      border-radius: 28px;
+      background: var(--surface);
+      box-shadow: inset 0 1px 0 var(--glass-edge), var(--shadow-sm);
+      -webkit-backdrop-filter: blur(22px) saturate(145%);
+      backdrop-filter: blur(22px) saturate(145%);
+    }
+    .principle::before {
+      content: "";
+      display: block;
+      width: 38px;
+      height: 6px;
+      margin-bottom: 26px;
+      border-radius: 999px;
+      background: var(--tertiary);
+    }
+    .principle:nth-child(2)::before { background: var(--blue); }
+    .principle:nth-child(3)::before { background: var(--orange); }
+    .principle h3 { margin-bottom: 44px; font-size: 1.08rem; font-weight: 670; letter-spacing: -.02em; }
+    .principle p { margin: 0; color: var(--muted); letter-spacing: -.012em; }
+
+    .apps-stage {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 16px;
+    }
+    .app-card {
+      position: relative;
+      display: flex;
+      min-height: 460px;
+      flex-direction: column;
+      padding: 28px;
+      overflow: hidden;
+      border: 1px solid rgba(255,255,255,.48);
+      border-radius: 32px;
+      color: #fff;
+      box-shadow: 0 24px 60px rgba(0, 61, 140, .18), inset 0 1px 0 rgba(255,255,255,.5);
+      isolation: isolate;
+    }
+    .app-card.mushaf { background: linear-gradient(155deg, #1a7a5e 0%, #0e5c46 42%, #07332a 100%); }
+    .app-card.qibla { background: linear-gradient(148deg, #57bdff 0%, #0a84ff 44%, #075cc6 100%); }
+    .app-card.baloot { background: linear-gradient(148deg, #5a2d2d 0%, #2b2126 46%, #121417 100%); }
+    .app-card::before {
+      content: "";
+      position: absolute;
+      width: 240px;
+      height: 240px;
+      top: -78px;
+      right: -50px;
+      border: 46px solid rgba(255,255,255,.14);
+      border-radius: 50%;
+      z-index: -1;
+    }
+    .app-card::after {
+      content: "";
+      position: absolute;
+      width: 150px;
+      height: 150px;
+      top: 18px;
+      right: -6px;
+      border-radius: 50%;
+      background: rgba(255,255,255,.08);
+      z-index: -1;
+    }
+    .app-label {
+      font-size: .72rem;
+      font-weight: 700;
+      letter-spacing: .06em;
+      text-transform: uppercase;
+      opacity: .92;
+    }
+    .app-top {
+      display: flex;
+      align-items: flex-start;
+      justify-content: space-between;
+      gap: 16px;
+      margin-bottom: 22px;
+    }
+    .app-icon {
+      width: 56px;
+      height: 56px;
+      flex: 0 0 auto;
+      display: grid;
+      place-items: center;
+      border-radius: 18px;
+      background: rgba(255,255,255,.18);
+      border: 1px solid rgba(255,255,255,.28);
+      box-shadow: inset 0 1px 0 rgba(255,255,255,.5), 0 10px 24px rgba(0,0,0,.14);
+      -webkit-backdrop-filter: blur(14px) saturate(150%);
+      backdrop-filter: blur(14px) saturate(150%);
+    }
+    .app-status {
+      display: inline-flex;
+      align-items: center;
+      gap: 7px;
+      padding: 7px 10px;
+      border-radius: 999px;
+      background: rgba(255,255,255,.94);
+      color: #111114;
+      font-size: .72rem;
+      font-weight: 700;
+      letter-spacing: -.01em;
+      line-height: 1;
+      white-space: nowrap;
+      box-shadow: 0 6px 18px rgba(0,0,0,.14);
+    }
+    .app-status::before {
+      content: "";
+      width: 7px;
+      height: 7px;
+      border-radius: 50%;
+      background: #ff9f0a;
+      box-shadow: 0 0 0 3px rgba(255,159,10,.18);
+      flex: 0 0 auto;
+    }
+    .app-copy { margin-top: auto; }
+    .app-card h3 {
+      max-width: 440px;
+      margin: 0 0 10px;
+      font-size: clamp(1.85rem, 2.6vw, 2.45rem);
+      font-weight: 700;
+      line-height: 1;
+      letter-spacing: -.045em;
+    }
+    .app-card p { max-width: 500px; margin: 0; color: rgba(255,255,255,.82); font-size: .98rem; line-height: 1.55; }
+    .app-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-top: 22px;
+    }
+    .app-action {
+      display: inline-flex;
+      min-height: 44px;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      padding: 10px 15px;
+      border: 1px solid rgba(255,255,255,.28);
+      border-radius: 999px;
+      background: rgba(255,255,255,.16);
+      color: #fff;
+      font-size: .84rem;
+      font-weight: 650;
+      letter-spacing: -.01em;
+      text-decoration: none;
+      -webkit-backdrop-filter: blur(18px) saturate(150%);
+      backdrop-filter: blur(18px) saturate(150%);
+      transition: background .18s ease, transform .18s ease;
+    }
+    .app-action.primary {
+      background: #fff;
+      color: #111114;
+      border-color: rgba(255,255,255,.9);
+      box-shadow: 0 10px 24px rgba(0,0,0,.16);
+    }
+    .app-action.primary:hover { background: rgba(255,255,255,.92); }
+    .app-action[aria-disabled="true"] { color: rgba(255,255,255,.7); cursor: not-allowed; }
+    .app-action:not([aria-disabled="true"]):hover { background: rgba(255,255,255,.25); transform: translateY(-1px); }
+    .app-action:focus-visible { outline: 3px solid rgba(255,255,255,.46); outline-offset: 3px; }
+
+    .contact-wrap {
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) auto;
+      gap: 40px;
+      align-items: end;
+      padding: clamp(32px, 5vw, 58px);
+      overflow: hidden;
+      border: 1px solid var(--line);
+      border-radius: 40px;
+      background: var(--surface);
+      box-shadow: inset 0 1px 0 var(--glass-edge), var(--shadow-sm);
+      -webkit-backdrop-filter: blur(26px) saturate(150%);
+      backdrop-filter: blur(26px) saturate(150%);
+    }
+    .contact-wrap h2 { max-width: 700px; margin-bottom: 14px; }
+    .contact-wrap p { max-width: 640px; margin: 0; color: var(--muted); }
+    .contact-note {
+      min-width: 230px;
+      padding: 14px 18px;
+      border: 1px solid var(--line);
+      border-radius: 999px;
+      background: var(--raised);
+      color: var(--muted);
+      box-shadow: inset 0 1px 0 var(--glass-edge);
+      font-size: .88rem;
+      font-weight: 580;
+      text-align: center;
+    }
+    footer {
+      display: flex;
+      justify-content: space-between;
+      gap: 24px;
+      padding: 30px 0 44px;
+      color: var(--muted);
+      font-size: .84rem;
+    }
+    footer p { margin: 0; }
+    .footer-links { display: flex; flex-wrap: wrap; gap: 16px; }
+    .footer-links a {
+      color: var(--blue);
+      font-weight: 600;
+      text-decoration: none;
+    }
+    .footer-links a:hover { text-decoration: underline; text-underline-offset: 3px; }
+    .footer-links a:focus-visible { outline: 3px solid color-mix(in srgb, var(--blue) 35%, transparent); outline-offset: 3px; border-radius: 4px; }
+
+    .privacy-page { padding: 26px 0 72px; }
+    .privacy-topbar {
+      display: flex;
+      min-height: 54px;
+      align-items: center;
+      justify-content: space-between;
+      gap: 20px;
+    }
+    .privacy-back {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      min-height: 44px;
+      color: var(--blue);
+      font-size: .96rem;
+      font-weight: 620;
+      letter-spacing: -.015em;
+      text-decoration: none;
+    }
+    .privacy-back:hover { color: var(--blue-deep); }
+    .privacy-back:focus-visible { outline: 3px solid color-mix(in srgb, var(--blue) 35%, transparent); outline-offset: 3px; border-radius: 6px; }
+    .privacy-updated { color: var(--muted); font-size: .84rem; font-variant-numeric: tabular-nums; }
+    .policy-sheet {
+      max-width: 920px;
+      margin: 40px auto 0;
+      overflow: hidden;
+      border: 1px solid var(--line);
+      border-radius: 40px;
+      background: var(--surface);
+      box-shadow: inset 0 1px 0 var(--glass-edge), var(--shadow-lg);
+      -webkit-backdrop-filter: blur(26px) saturate(150%);
+      backdrop-filter: blur(26px) saturate(150%);
+    }
+    .policy-header {
+      padding: clamp(36px, 7vw, 70px);
+      border-bottom: 1px solid var(--line);
+      background:
+        radial-gradient(circle at 92% 8%, rgba(0, 122, 255, .16), transparent 20rem),
+        var(--surface);
+    }
+    .policy-eyebrow {
+      margin-bottom: 18px;
+      color: var(--blue);
+      font-size: .86rem;
+      font-weight: 680;
+      letter-spacing: -.01em;
+    }
+    .policy-header h1 {
+      max-width: 720px;
+      margin-bottom: 22px;
+      font-size: clamp(3rem, 7vw, 5.8rem);
+      line-height: .94;
+    }
+    .policy-summary {
+      max-width: 660px;
+      margin: 0;
+      color: var(--muted);
+      font-size: clamp(1.08rem, 2vw, 1.3rem);
+      line-height: 1.55;
+      letter-spacing: -.018em;
+    }
+    .policy-body { padding: 12px clamp(28px, 7vw, 70px) 52px; }
+    .policy-section {
+      display: grid;
+      grid-template-columns: 160px minmax(0, 1fr);
+      gap: 34px;
+      padding: 34px 0;
+      border-top: 0;
+      border-bottom: 1px solid var(--line);
+    }
+    .policy-section:last-child { border-bottom: 0; }
+    .policy-section h2 {
+      margin: 2px 0 0;
+      font-size: 1rem;
+      font-weight: 680;
+      line-height: 1.4;
+      letter-spacing: -.02em;
+    }
+    .policy-section p,
+    .policy-section ul { margin: 0; color: var(--muted); }
+    .policy-section p + p { margin-top: 14px; }
+    .policy-section ul { padding-left: 1.15rem; }
+    .policy-section li { padding-left: .25rem; }
+    .policy-section li + li { margin-top: 12px; }
+    .policy-section strong { color: var(--ink); font-weight: 650; }
+    .privacy-footer { justify-content: center; padding-bottom: 0; text-align: center; }
+
+    @media (max-width: 1020px) {
+      .apps-stage { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+      .app-card.baloot { grid-column: span 2; min-height: 380px; }
+    }
+
+    @media (max-width: 860px) {
+      .hero { min-height: auto; grid-template-columns: 1fr; gap: 48px; padding-top: 54px; }
+      .signal-panel { min-height: 370px; }
+      .section-head { grid-template-columns: 1fr; gap: 8px; }
+      .section-index { padding-top: 0; }
+      .about-grid, .apps-stage { margin-left: 0; }
+      .about-grid { grid-template-columns: 1fr 1fr; }
+      .principle:last-child { grid-column: 1 / -1; }
+      .apps-stage { grid-template-columns: 1fr; }
+      .app-card.baloot { grid-column: auto; min-height: 440px; }
+      .contact-wrap { grid-template-columns: 1fr; align-items: start; }
+    }
+
+    @media (max-width: 560px) {
+      body { background: var(--canvas); }
+      .page { width: min(100% - 30px, 1180px); }
+      .hero { gap: 38px; padding: 38px 0 60px; }
+      h1 { font-size: clamp(3.45rem, 18vw, 5rem); }
+      .intro { font-size: 1.08rem; }
+      .hero-actions { align-items: stretch; flex-direction: column; }
+      .button { width: 100%; }
+      .signal-panel { min-height: 330px; border-radius: 34px; }
+      .orbit.one { right: -90px; }
+      .orbit.two { right: -34px; }
+      .orbit.three { right: 21px; }
+      .panel-copy { inset: auto 28px 28px; }
+      section { padding: 74px 0; }
+      .section-head { margin-bottom: 32px; }
+      h2 { font-size: clamp(2.45rem, 12vw, 3.55rem); }
+      .about-grid { grid-template-columns: 1fr; }
+      .principle:last-child { grid-column: auto; }
+      .principle { min-height: 0; padding: 24px; border-radius: 24px; }
+      .principle h3 { margin-bottom: 24px; }
+      .app-card { min-height: 390px; padding: 28px; border-radius: 30px; }
+      .app-actions { flex-direction: column; align-items: stretch; }
+      .app-action { width: 100%; }
+      .contact-wrap { padding: 28px; border-radius: 30px; }
+      .contact-note { min-width: 0; width: 100%; }
+      footer { flex-direction: column; gap: 7px; }
+      .privacy-page { padding-top: 18px; }
+      .privacy-topbar { align-items: flex-start; flex-direction: column; gap: 4px; }
+      .policy-sheet { margin-top: 26px; border-radius: 30px; }
+      .policy-header { padding: 34px 26px 36px; }
+      .policy-header h1 { font-size: clamp(3rem, 15vw, 4.3rem); }
+      .policy-body { padding: 8px 26px 28px; }
+      .policy-section { grid-template-columns: 1fr; gap: 12px; padding: 28px 0; }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      html { scroll-behavior: auto; }
+      *, *::before, *::after { transition-duration: .01ms !important; }
+    }
+  </style>
+</head>
+<body>
+  <main class="page" id="home-view">
+    <header class="hero">
+      <div>
+        <div class="status"><span class="status-dot" aria-hidden="true"></span>Building for Meta Quest</div>
+        <h1>Belal<br />Al-Badani</h1>
+        <p class="intro">Trust &amp; Safety and integrity professional, building thoughtful software for mobile and immersive platforms.</p>
+        <nav class="hero-actions" aria-label="Page sections">
+          <a class="button" href="#apps">See what’s in progress
+            <svg width="17" height="17" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </a>
+          <a class="button secondary" href="#about">About Belal</a>
+        </nav>
+      </div>
+      <div class="signal-panel" aria-label="Three platforms, one growing app portfolio">
+        <div class="orbit one" aria-hidden="true"></div>
+        <div class="orbit two" aria-hidden="true"></div>
+        <div class="orbit three" aria-hidden="true"></div>
+        <div class="panel-copy">
+          <span class="panel-number">03 platforms</span>
+          <p>Mobile, spatial, and whatever comes next.</p>
+        </div>
+      </div>
+    </header>
+
+    <section id="about" aria-labelledby="about-title">
+      <div class="section-head">
+        <div class="section-index">01 / About</div>
+        <div>
+          <h2 id="about-title">Technology should earn people’s trust.</h2>
+          <p class="section-lede">Belal works at the intersection of Trust &amp; Safety, integrity, and product thinking—with a focus on making digital experiences more responsible, useful, and human.</p>
+        </div>
+      </div>
+      <div class="about-grid">
+        <article class="principle">
+          <h3>Trust &amp; Safety</h3>
+          <p>Designing with real-world risks, accountability, and user well-being in mind from the beginning.</p>
+        </article>
+        <article class="principle">
+          <h3>Integrity</h3>
+          <p>Turning complex signals and systems into clear decisions people can understand and act on.</p>
+        </article>
+        <article class="principle">
+          <h3>Building</h3>
+          <p>Exploring practical app ideas across mobile and immersive platforms, from concept to launch.</p>
+        </article>
+      </div>
+    </section>
+
+    <section id="apps" aria-labelledby="apps-title">
+      <div class="section-head">
+        <div class="section-index">02 / Apps</div>
+        <div>
+          <h2 id="apps-title">Built for Meta Quest.</h2>
+          <p class="section-lede">Three immersive apps submitted to Meta Horizon — each currently in review ahead of release.</p>
+        </div>
+      </div>
+      <div class="apps-stage">
+        <article class="app-card mushaf">
+          <div class="app-top">
+            <div class="app-icon" aria-hidden="true">
+              <svg width="30" height="30" viewBox="0 0 24 24" fill="none"><path d="M5 4.5C6.8 3.6 9 3.2 12 3.2v15.6c-3 0-5.2.4-7 1.3V4.5Z" fill="rgba(255,255,255,.18)" stroke="#fff" stroke-width="1.4" stroke-linejoin="round"/><path d="M19 4.5c-1.8-.9-4-1.3-7-1.3v15.6c3 0 5.2.4 7 1.3V4.5Z" fill="rgba(255,255,255,.08)" stroke="#fff" stroke-width="1.4" stroke-linejoin="round"/><path d="M8 7.2c.9-.2 1.9-.3 3-.3M8 10c.9-.2 1.9-.3 3-.3M13 6.9c1.1 0 2.1.1 3 .3M13 9.7c1.1 0 2.1.1 3 .3" stroke="#fff" stroke-width="1.2" stroke-linecap="round" opacity=".9"/></svg>
+            </div>
+            <span class="app-status">In review on Meta Horizon</span>
+          </div>
+          <div class="app-label">Meta Quest · Quran Reader</div>
+          <div class="app-copy">
+            <h3>Mushaf VR</h3>
+            <p>A Quran reader for Meta Quest presenting the Madinah Mushaf in a calm, immersive page-by-page experience.</p>
+            <div class="app-actions" aria-label="Mushaf VR links">
+              <a class="app-action primary" href="https://developers.meta.com/horizon/manage/applications/1300385273161823/" target="_blank" rel="noopener noreferrer">
+                View on Meta Horizon
+                <svg width="14" height="14" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 17L17 7M9 7h8v8" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              </a>
+            </div>
+          </div>
+        </article>
+
+        <article class="app-card qibla">
+          <div class="app-top">
+            <div class="app-icon" aria-hidden="true">
+              <svg width="30" height="30" viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="8.2" stroke="#fff" stroke-width="1.4"/><path d="M15.5 8.5l-1.9 4.9-4.9 1.9 1.9-4.9 4.9-1.9Z" fill="#fff"/><circle cx="12" cy="12" r="1.1" fill="#0a84ff"/></svg>
+            </div>
+            <span class="app-status">In review on Meta Horizon</span>
+          </div>
+          <div class="app-label">Meta Quest · Direction Finder</div>
+          <div class="app-copy">
+            <h3>Qibla — <span lang="ar" dir="rtl">القبلة</span></h3>
+            <p>A Qibla direction finder for Meta Quest that helps you locate the direction of Makkah from inside your headset.</p>
+            <div class="app-actions" aria-label="Qibla app links">
+              <a class="app-action primary" href="https://developers.meta.com/horizon/manage/applications/1296169093583441/" target="_blank" rel="noopener noreferrer">
+                View on Meta Horizon
+                <svg width="14" height="14" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 17L17 7M9 7h8v8" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              </a>
+              <a class="app-action" href="https://muse.ai/s/qibla-vr-privacy-policy-ct6cxi6xhqxmuxk" target="_blank" rel="noopener noreferrer">Privacy Policy</a>
+            </div>
+          </div>
+        </article>
+
+        <article class="app-card baloot">
+          <div class="app-top">
+            <div class="app-icon" aria-hidden="true">
+              <svg width="30" height="30" viewBox="0 0 24 24" fill="none"><rect x="4" y="6" width="11" height="14" rx="2" transform="rotate(-8 4 6)" fill="rgba(255,255,255,.14)" stroke="#fff" stroke-width="1.3"/><rect x="9" y="4.5" width="11" height="14" rx="2" transform="rotate(7 9 4.5)" fill="rgba(255,255,255,.08)" stroke="#fff" stroke-width="1.3"/><path d="M14.5 9.2c.9-1.2 3-.9 3 .7 0 1.4-1.6 2.3-3 3.4-1.4-1.1-3-2-3-3.4 0-1.6 2.1-1.9 3-.7Z" fill="#fff"/></svg>
+            </div>
+            <span class="app-status">In review on Meta Horizon</span>
+          </div>
+          <div class="app-label">Meta Quest · Card Game</div>
+          <div class="app-copy">
+            <h3>Baloot VR</h3>
+            <p>The Saudi Baloot card game in VR for Meta Quest — sit at the table and play against three AI opponents.</p>
+            <div class="app-actions" aria-label="Baloot VR app links">
+              <a class="app-action primary" href="https://developers.meta.com/horizon/manage/applications/1300445239822493/" target="_blank" rel="noopener noreferrer">
+                View on Meta Horizon
+                <svg width="14" height="14" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 17L17 7M9 7h8v8" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              </a>
+            </div>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <section id="contact" aria-labelledby="contact-title">
+      <div class="contact-wrap">
+        <div>
+          <h2 id="contact-title">Interested in what’s next?</h2>
+          <p>Contact details and social profiles will be added here when Belal is ready to connect this site publicly.</p>
+        </div>
+        <div class="contact-note">Contact links coming soon</div>
+      </div>
+    </section>
+
+    <footer>
+      <p>Belal Al-Badani</p>
+      <div class="footer-links">
+        <a href="https://muse.ai/s/qibla-vr-privacy-policy-ct6cxi6xhqxmuxk" target="_blank" rel="noopener noreferrer">Qibla VR Privacy Policy</a>
+        <p>Trust &amp; Safety · Integrity · Product Building</p>
+      </div>
+    </footer>
+  </main>
+
+  <main class="page privacy-page" id="privacy-view" hidden>
+    <nav class="privacy-topbar" aria-label="Privacy policy navigation">
+      <a class="privacy-back" href="./">
+        <svg width="18" height="18" viewBox="0 0 24 24" aria-hidden="true"><path d="m14 6-6 6 6 6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        Back to Belal’s website
+      </a>
+      <span class="privacy-updated">Last updated September 24, 2026</span>
+    </nav>
+
+    <article class="policy-sheet">
+      <header class="policy-header">
+        <p class="policy-eyebrow">Qibla VR</p>
+        <h1>Privacy Policy</h1>
+        <p class="policy-summary">Qibla VR is a native Meta Quest app that shows the direction of the Qibla—the direction toward Makkah—in virtual reality.</p>
+      </header>
+
+      <div class="policy-body">
+        <section class="policy-section" aria-labelledby="location-title">
+          <h2 id="location-title">Location data</h2>
+          <ul>
+            <li>The app uses your selected location <strong>only</strong> to calculate the Qibla bearing—the direction from your position to Makkah—and the distance to Makkah.</li>
+            <li>Your location is stored <strong>only on your device</strong> in the app’s on-device storage so the app remembers your city between sessions.</li>
+            <li>Your location is <strong>never transmitted</strong> to any server, analytics service, advertiser, or third party. The app has no backend, no account system, and sends no personal data over the network.</li>
+          </ul>
+        </section>
+
+        <section class="policy-section" aria-labelledby="other-data-title">
+          <h2 id="other-data-title">Other data</h2>
+          <ul>
+            <li>The app does not collect, store, or share personal information, usage analytics, advertising identifiers, contacts, or files.</li>
+            <li>The app does not access the camera or microphone.</li>
+            <li>To render your hands and detect pinch gestures when you use the app without controllers, the app reads hand-tracking data (hand and finger positions) from the headset. This data is processed only on your device in real time to show your hands and recognize gestures; it is never recorded, stored, or transmitted anywhere.</li>
+          </ul>
+        </section>
+
+        <section class="policy-section" aria-labelledby="children-title">
+          <h2 id="children-title">Children’s privacy</h2>
+          <p>The app collects no data from anyone, including children.</p>
+        </section>
+
+        <section class="policy-section" aria-labelledby="changes-title">
+          <h2 id="changes-title">Changes</h2>
+          <p>If this policy changes, the updated version will replace this document.</p>
+        </section>
+
+        <section class="policy-section" aria-labelledby="contact-policy-title">
+          <h2 id="contact-policy-title">Contact</h2>
+          <p>For privacy questions, contact the developer through the Meta Horizon Store listing contact channel.</p>
+        </section>
+      </div>
+    </article>
+
+    <footer class="privacy-footer">
+      <p>Qibla VR · Privacy Policy</p>
+    </footer>
+  </main>
+
+  <script>
+    (function () {
+      var privacyView = document.getElementById('privacy-view');
+      var homeView = document.getElementById('home-view');
+      var params = new URLSearchParams(window.location.search);
+      if (params.get('page') === 'privacy-qibla') {
+        homeView.hidden = true;
+        privacyView.hidden = false;
+        document.title = 'Qibla VR Privacy Policy — Belal Al-Badani';
+      }
+    }());
+  </script>
+</body>
+</html>
